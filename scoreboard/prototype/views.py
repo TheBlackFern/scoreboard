@@ -3,20 +3,14 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from django.http import HttpResponse
 from django.contrib.auth.models import User
-from django.db.models import Count, Case, When, FloatField
 from django.views.decorators.csrf import csrf_exempt
 from .models import Task, TaskGroup, UserTask
-from .serializers import TaskGroupSerializer, UserTaskSerializer
+from .serializers import TaskGroupSerializer
 
 
 class TaskGroupList(generics.ListAPIView):
     queryset = TaskGroup.objects.all()
     serializer_class = TaskGroupSerializer
-
-
-class UserTaskList(generics.ListAPIView):
-    queryset = UserTask.objects.all()
-    serializer_class = UserTaskSerializer
 
 
 def group_stats(group):

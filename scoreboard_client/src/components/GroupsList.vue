@@ -9,6 +9,7 @@
 
         <button @click="toggleView">Alter View</button>
         <div v-if="showOwn">
+            <h1>Your Progress</h1>
             <div v-if="currentUser in userdata">
                 <ul>
                     <li v-for="(group, groupName) in userdata[currentUser]" :key="groupName">

@@ -14,9 +14,3 @@ class TaskGroupSerializer(serializers.ModelSerializer):
     class Meta:
         model = TaskGroup
         fields = ["id", "name", "tasks"]
-
-
-class UserTaskSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = UserTask
-        fields = "__all__"

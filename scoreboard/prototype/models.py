@@ -14,12 +14,12 @@ class Task(models.Model):
     group = models.ForeignKey(TaskGroup, on_delete=models.CASCADE, related_name="tasks")
 
     def __str__(self):
-        return self.name
+        return f"{self.id}: {self.name}"
 
 
 class UserTask(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    task = models.ForeignKey(Task, on_delete=models.CASCADE)
+    task = models.ForeignKey(Task, on_delete=models.CASCADE, related_name="user_tasks")
 
     def __str__(self):
-        return f"{self.user.username} - {self.task.name}"
+        return f"{self.user.id}: {self.task.id}"

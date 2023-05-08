@@ -65,7 +65,7 @@ export default {
         },
 
         async getData() {
-            axios.get('http://localhost:8000/api/groups/')
+            axios.get('https://scoreboard-backend-production.up.railway.app/api/groups/')
                 .then((response) => {
                     this.groups = response.data;
                 })
@@ -73,7 +73,7 @@ export default {
                     console.log(error);
                 })
 
-            axios.get('http://localhost:8000/api/usercompletion/')
+            axios.get('https://scoreboard-backend-production.up.railway.app/api/usercompletion/')
                 .then((response) => {
                     this.userdata = response.data;
                     console.log(this.userdata)
@@ -82,7 +82,7 @@ export default {
                     console.log(error);
                 })
 
-            axios.get('http://localhost:8000/api/groupcompletion/')
+            axios.get('https://scoreboard-backend-production.up.railway.app/api/groupcompletion/')
                 .then((response) => {
                     this.scoreboard = response.data;
                     for (let key in this.scoreboard) {
